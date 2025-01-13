@@ -55,7 +55,6 @@ if (isset($_POST['importSubmit'])) {
                     $page_count = $line_field[20];
                     $page_filecount = $line_field[21];
                     $prevQuery = "SELECT page_id FROM x92374_pages WHERE page_id = '" . $page_id . "'";
-//$db->iud("INSERT INTO `new_table` (`name`, `age`) VALUES ('" . $name . "', '" . $age . "')");
                     $queryInsert = "INSERT INTO `x92374_pages` (
 						`page_id`, 
 						`page_alias`, 
