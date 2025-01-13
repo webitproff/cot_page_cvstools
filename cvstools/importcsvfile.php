@@ -79,7 +79,7 @@ if (isset($_POST['importSubmit'])) {
 						`page_count`, 
 						`page_filecount`) 
                         VALUES (
-						'" . $page_id . "',
+				'" . $page_id . "',
 				   '" . $page_alias . "',
 				   '" . $page_state . "',
 				   '" . $page_cat . "',
@@ -101,17 +101,7 @@ if (isset($_POST['importSubmit'])) {
 				   '" . $page_size . "',
 				   '" . $page_count . "',
 				   '" . $page_filecount . "')";
-                }/*  else {
-                    if (count($line_field) != 3) break;
-                    $xml_id = $line_field[0];
-                    $parent_xml_id = $line_field[1];
-                    $name_department = $line_field[2];
-                    $prevQuery = "SELECT XML_ID FROM departments WHERE XML_ID = '" . $xml_id . "'";
-                    $queryInsert = "INSERT INTO departments (
-                        XML_ID,
-                        PARENT_XML_ID, 
-                        NAME_DEPARTMENT) VALUES ('" . $xml_id . "', '" . $parent_xml_id . "', '" . $name_department . "')";
-                } */
+                }
                 // Обращение к БД
                 $prevResult = $db->query($prevQuery);
                 if ($prevResult->num_rows != 1) {
