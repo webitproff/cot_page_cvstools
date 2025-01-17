@@ -1,3 +1,6 @@
+# CVS-Tools for Cotonti. #
+## Import and export data from a CVS file into DB MySQL. ##
+
 <p>Как выполнить экспорт товаров или статей в Cotonti CMS и после выполнить импорт из CVS или Excel файла в базу данных MySQL вашего сайта.</p>
 
 <p>Базовый набор инструментов для экспорта и импорта данных в таблицу модуля &quot;Pages&quot;.</p>
@@ -118,6 +121,127 @@ https://mydomain.com/cvstools/index.php</pre>
 <p>&nbsp;</p>
 
 <p><a href="https://abuyfile.com/ru/forums/cotonti/custom/topic101">Форум по обсуждению и поддержке инструментов для экспорта и импорта статей из CVS-файлов.</a></p>
+
+<p>CVS-Tools for Cotonti. Import and export from a CVS or Excel file</p>
+
+<p>How to export products or articles to Cotonti CMS and then import from a CVS or Excel file into the MySQL database of your site.</p>
+
+<p>How to export products or articles to Cotonti CMS and then import from a CVS or Excel file into the MySQL database of your site.</p>
+
+<p>A basic set of tools for exporting and importing data to the Pages module table.</p>
+
+<p>The principle of operation and capabilities of the &quot;CVS-Tools for Cotonti&quot; library:</p>
+
+<p>1. Export articles from the database to a CVS file.</p>
+
+<p>Exporting fields from a database table to a 1400-line file takes 1 second.</p>
+
+<p>When exporting, all fields are unloaded, including extra fields or fields created by other extensions of your site on cotonti.</p>
+
+<p>2. Google spreadsheets (intermediary)</p>
+
+<p>The resulting file is imported into Google tables, edited, supplemented, then downloaded in cvs format, and then imported into your site&#39;s database via CVS-Tools for Cotonti.</p>
+
+<p>3. Import articles into the database from a CVS file.</p>
+
+<p>At the moment, the import tool works with the first 16 fields of the Pages module table, which are created by the module during installation, page_id, page_alias, page_state, page_cat, page_title, page_text, and so on, all of which can be viewed here, but without extrapolations.</p>
+
+<p>The entire list of fields:</p>
+
+<p><br />
+page_id<br />
+page_alias<br />
+page_state<br />
+page_cat<br />
+page_title<br />
+page_desc<br />
+page_keywords<br />
+page_metatitle<br />
+page_metadesc<br />
+page_text<br />
+page_parser<br />
+page_author<br />
+page_ownerid<br />
+page_date<br />
+page_begin<br />
+page_expire<br />
+page_updated</p>
+
+<p>Other fields, if desired, can already be added independently.</p>
+
+<p>&nbsp;<br />
+The working environment and the list of necessary files in the folder &quot;cvstools&quot;:<br />
+dbconfig.php</p>
+
+<p>The configuration file for the database connection.</p>
+
+<p>index.php</p>
+
+<p>The entry file, where we get access to tools for importing and exporting data from rows in a table with articles.</p>
+
+<p>fileslist.txt</p>
+
+<p>Here we write down the names of the CVS files that were uploaded to the database import/update form.</p>
+
+<p>exportcsvfile.php</p>
+
+<p>A file with a line-by-line export script to a CVS file.</p>
+
+<p>updateimportcsvfile.php</p>
+
+<p>A file that combines two tools at once in its script is updating a row in the database if there is one and adding it if there is no such row.</p>
+
+<p>importcsvfile.php</p>
+
+<p>this is an import-only file.</p>
+
+<p><br />
+The remaining files are not used. for now, they are stored for comparison and as an option.</p>
+
+<p>Although the tools are tailored to the fields of the article module database table, they are not a module or plug-in of the Cotonti engine, and therefore are installed as an independent library.</p>
+
+<p>&nbsp;<br />
+The installation procedure for &quot;CVS-Tools for Cotonti&quot;:</p>
+
+<p><br />
+1. Download from the repository using the link below.<br />
+2. The downloaded archive contains the folder &quot;cvstools&quot;.</p>
+
+<p>We upload it to the root of your site.</p>
+
+<p><br />
+3. Connect the database.</p>
+
+<p>Opening it public_html/dbcvstools/dbconfig.php<br />
+&nbsp;&nbsp; &nbsp;<br />
+// DB configuration and connection<br />
+const DB_HOST = &quot;localhost&quot;;<br />
+const DB_USERNAME = &quot;user&quot;;<br />
+const DB_PASSWORD = &quot;password&quot;;<br />
+const DB_NAME = &quot;database name&quot;;</p>
+
+<p>we register our correct access data.</p>
+
+<p>4. Interface and launch</p>
+
+<p>We write it in the address bar</p>
+
+<p>&nbsp;&nbsp; &nbsp;<br />
+https://mydomain.com/cvstools/index.php</p>
+
+<p>where, &quot;mydomain.com &quot; of course your domain.</p>
+
+<p>&nbsp;<br />
+Attention!. Always backup the database before any import.</p>
+
+<p>&nbsp;</p>
+
+<p><a href="https://abuyfile.com/en/forums/cotonti/custom/topic101"><strong>A forum for discussing and supporting tools </strong></a>for exporting and importing articles from CVS files.</p>
+
+<p>&nbsp;</p>
+
+<p>The current version is always available for download on the <a href="https://github.com/webitproff/cot_page_cvstools" rel="nofollow">GitHub public repository</a>.</p>
+
 
 <p>&nbsp;</p>
 
